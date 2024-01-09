@@ -39,12 +39,12 @@ public class Cuenta {
     @NotNull(message = "Estado es requerido")
     private Boolean estado;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    /*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
     @OneToMany(mappedBy = "cuenta")
-    private List<Movimiento> movimientos;
+    private List<Movimiento> movimientos;*/
     private enum TipoCuenta{
         AHORRO, CORRIENTE;
     }
