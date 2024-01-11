@@ -26,4 +26,10 @@ public class CuentaControlador {
     public ResponseEntity<Cuenta> guardar(@RequestBody @Valid Cuenta cuenta) {
         return new ResponseEntity<>(cuentaServicio.guardar(cuenta), HttpStatus.CREATED);
     }
+
+    @PutMapping("{id}")
+    public Cuenta actualizar(@RequestBody Cuenta cuenta, @PathVariable Long id){
+        cuenta.setId(id);
+        return cuentaServicio.modificarCuenta(cuenta);
+    }
 }

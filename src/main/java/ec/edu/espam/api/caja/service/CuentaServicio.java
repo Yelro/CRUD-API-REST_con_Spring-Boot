@@ -5,4 +5,5 @@ import java.util.List;
 public interface CuentaServicio {
     List<Cuenta> obtenerTodos();
     Cuenta guardar(Cuenta cuenta);
+    Cuenta modificarCuenta(Cuenta cuenta);
 }

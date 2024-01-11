@@ -20,4 +20,8 @@ public class CuentaServicioImpl implements CuentaServicio {
     public Cuenta guardar(Cuenta cuenta) {
         return cuentaRepositorio.save(cuenta);
     }
+    @Override
+    public Cuenta modificarCuenta(Cuenta cuenta) {
+        return cuentaRepositorio.save(cuenta);
+    }
 }
