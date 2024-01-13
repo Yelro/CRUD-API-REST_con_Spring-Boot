@@ -1,7 +1,7 @@
 package ec.edu.espam.api.caja.controller;
 
 import ec.edu.espam.api.caja.domain.Account;
-import ec.edu.espam.api.caja.service.ServiceAccount;
+import ec.edu.espam.api.caja.service.AccountService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping(value = "/accounts")
 
 public class AccountController {
-    private final ServiceAccount accountService;
+    private final AccountService accountService;
 
     @GetMapping
     public ResponseEntity<List<Account>> getAll() {
