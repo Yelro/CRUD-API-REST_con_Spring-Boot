@@ -30,9 +30,9 @@ public class Account {
     @NotNull(message = "InitialBalance is required")
     private BigDecimal initialBalance;
 
-    @Column(name = "balance")
-    @NotNull(message = "Balance is required")
-    private BigDecimal balance;
+    @Column(name = "amount")
+    @NotNull(message = "Amount is required")
+    private BigDecimal amount;
 
     @Column(name = "state")
     @NotNull(message = "State is required")
