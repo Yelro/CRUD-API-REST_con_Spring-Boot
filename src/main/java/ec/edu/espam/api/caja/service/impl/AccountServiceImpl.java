@@ -1,27 +1,41 @@
 package ec.edu.espam.api.caja.service.impl;
 
 import ec.edu.espam.api.caja.domain.Account;
+import ec.edu.espam.api.caja.domain.Client;
+import ec.edu.espam.api.caja.domain.dto.AccountDto;
 import ec.edu.espam.api.caja.repository.AccountRepository;
 import ec.edu.espam.api.caja.service.AccountService;
+import ec.edu.espam.api.caja.service.ClientService;
+import ec.edu.espam.api.caja.util.Mapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AccountServiceImpl implements AccountService {
 
-    private final AccountRepository accountRepository;
+    private final AccountRepository repository;
+    private final ClientService clientService;
     @Override
-    public List<Account> getAll() {
-        return accountRepository.findAll();
+    public List<AccountDto> getAll() {
+        return repository.findAll().stream().map(this::convertEntityToDto).toList();
     }
+
     @Override
-    public Account save(Account account) {
-        return accountRepository.save(account);
+    public AccountDto create(AccountDto dto) {
+        Client client = clientService.getById(dto.getClientId());
+        Account account = convertDtoToEntity(dto);
+        account.setClient(client);
+        return convertEntityToDto(repository.save(account));
     }
-    @Override
-    public Account modifyAccount(Account account) {
-        return accountRepository.save(account);
+
+    private AccountDto convertEntityToDto(Account account) {
+        return Mapper.modelMapper().map(account, AccountDto.class);
+    }
+
+    private Account convertDtoToEntity(AccountDto dto) {
+        return Mapper.modelMapper().map(dto, Account.class);
     }
 }

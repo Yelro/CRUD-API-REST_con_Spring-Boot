@@ -1,6 +1,7 @@
 package ec.edu.espam.api.caja.controller;
 
 import ec.edu.espam.api.caja.domain.Account;
+import ec.edu.espam.api.caja.domain.dto.AccountDto;
 import ec.edu.espam.api.caja.service.AccountService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -15,21 +16,16 @@ import java.util.List;
 @RequestMapping(value = "/accounts")
 
 public class AccountController {
-    private final AccountService accountService;
+    private final AccountService service;
 
     @GetMapping
-    public ResponseEntity<List<Account>> getAll() {
-        return ResponseEntity.ok(accountService.getAll());
+    public ResponseEntity<List<AccountDto>> getAll() {
+        return ResponseEntity.ok(service.getAll());
     }
 
     @PostMapping
-    public ResponseEntity<Account> save(@RequestBody @Valid Account account) {
-        return new ResponseEntity<>(accountService.save(account), HttpStatus.CREATED);
+    public ResponseEntity<AccountDto> create(@RequestBody @Valid AccountDto account) {
+        return new ResponseEntity<>(service.create(account), HttpStatus.CREATED);
     }
 
-    @PutMapping("{id}")
-    public Account update(@RequestBody Account account, @PathVariable Long id){
-        account.setId(id);
-        return accountService.modifyAccount(account);
-    }
 }

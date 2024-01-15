@@ -2,11 +2,14 @@ package ec.edu.espam.api.caja.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,6 +25,6 @@ public class Client extends Person {
     @NotNull(message = "status is required")
     private Boolean state;
 
-    /*@OneToMany(mappedBy = "client")
-    private List<Account> account;*/
+    @OneToMany(mappedBy = "client")
+    private List<Account> account;
 }

@@ -34,9 +34,9 @@ public class Movement {
     @NotNull(message = "Balance is required")
     private BigDecimal balance;
 
-    /*@NotNull(message = "Account is required")
+    @NotNull(message = "Account is required")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Account account;*/
+    private Account account;
     public enum TypeMovement{
         DEBIT, CREDIT;
     }
