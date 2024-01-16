@@ -7,21 +7,20 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.math.BigDecimal;
+
 @Data
 public class AccountDto {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Long id;
 
     @NotEmpty(message = "Number is required")
     private String number;
 
-    @NotNull(message = "TypeAccount is required")
+    @NotNull(message = "Type account is required")
     @Enumerated(EnumType.STRING)
-    private Account.TypeAccount type;
+    private Account.Type type;
 
-    @NotNull(message = "InitialBalance is required")
+    @NotNull(message = "Initial Balance is required")
     private BigDecimal initialBalance;
 
     @NotNull(message = "Amount is required")

@@ -6,12 +6,11 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-public class ClientDto extends PersonDto{
-
+public class ClientDto extends PersonDto {
     @NotEmpty(message = "Password is required")
-    @Size(min = 4, message = "Password must contain at least 4 characters")
+    @Size(min = 4, message = "Password must have at least 4 characters")
     private String password;
 
-    @NotNull(message = "status is required")
+    @NotNull(message = "State is required")
     private Boolean state;
 }
