@@ -7,6 +7,7 @@ import ec.edu.espam.api.caja.exceptions.EntityNotFoundException;
 import ec.edu.espam.api.caja.repository.AccountRepository;
 import ec.edu.espam.api.caja.service.AccountService;
 import ec.edu.espam.api.caja.service.ClientService;
+import ec.edu.espam.api.caja.service.MovementService;
 import ec.edu.espam.api.caja.util.Mapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ public class AccountServiceImpl implements AccountService {
 
     private final AccountRepository repository;
     private final ClientService clientService;
+    private final MovementService movementService;
     @Override
     public List<AccountDto> getAll() {
         return repository.findAll().stream().map(this::convertEntityToDto).toList();
@@ -26,11 +28,15 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public AccountDto create(AccountDto dto) {
-        //Client client = clientService.getById(dto.getClientId());
+        dto.setInitialBalance(dto.getAmount());
         Account account = convertDtoToEntity(dto);
-        //account.setClient(client);
-        return convertEntityToDto(repository.save(account));
+        account = repository.save(account);
+
+        movementService.createCredit(account, dto.getAmount());
+
+        return convertEntityToDto(account);
     }
+
     @Override
     public AccountDto getById(Long id) {
         return convertEntityToDto(getEntityById(id));

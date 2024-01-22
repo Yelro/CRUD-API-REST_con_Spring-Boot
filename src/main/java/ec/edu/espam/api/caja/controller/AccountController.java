@@ -1,6 +1,5 @@
 package ec.edu.espam.api.caja.controller;
 
-import ec.edu.espam.api.caja.domain.Account;
 import ec.edu.espam.api.caja.domain.dto.AccountDto;
 import ec.edu.espam.api.caja.service.AccountService;
 import jakarta.validation.Valid;
