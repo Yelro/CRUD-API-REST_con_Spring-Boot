@@ -23,6 +23,7 @@ public class AccountServiceImpl implements AccountService {
     private final MovementService movementService;
     @Override
     public List<AccountDto> getAll() {
+
         return repository.findAll().stream().map(this::convertEntityToDto).toList();
     }
 

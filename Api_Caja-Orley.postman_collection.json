@@ -1,0 +1,555 @@
+{
+	"info": {
+		"_postman_id": "0c63a48c-bb71-4ef9-b468-4a2f4108dcf7",
+		"name": "Api_Caja-Orley",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8476059",
+		"_collection_link": "https://crimson-moon-740400.postman.co/workspace/New-Team-Workspace~6258bb7f-8269-48cd-b21e-2b88a2c508eb/collection/8476059-0c63a48c-bb71-4ef9-b468-4a2f4108dcf7?action=share&source=collection_link&creator=8476059"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\":\"44445555\",\r\n    \"type\":\"SAVINGS\",\r\n    \"initialBalance\":200,\r\n    \"amount\":200,\r\n    \"state\":true,\r\n    \"clientId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/accounts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/accounts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"accounts"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/accounts/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\":\"333333\",\r\n    \"type\":\"SAVINGS\",\r\n    \"initialBalance\":400,\r\n    \"amount\":200,\r\n    \"state\":true,\r\n    \"clientId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/accounts/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cuents/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cuents",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\":\"66666666\",\r\n    \"name\":\"Veto\",\r\n    \"gender\":\"M\",\r\n    \"address\":\"Quito\",\r\n    \"phone\":\"0985580155\",\r\n    \"age\":99,\r\n    \"password\":\"wse23r\",\r\n    \"state\":\"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/clients",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/clients/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/clients",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clients"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\":\"000000\",\r\n    \"name\":\"Paolo\",\r\n    \"gender\":\"M\",\r\n    \"address\":\"Sto \",\r\n    \"phone\":\"0985533333\",\r\n    \"age\":10,\r\n    \"password\":\"wsewee3\",\r\n    \"state\":\"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/clients/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/clients/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movement",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\":\"2014-01-22\",\r\n    \"type\":\"DEBIT\",\r\n    \"amount\":100,\r\n    \"accountId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movements",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movements/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movements",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movements",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\":\"2014-01-17\",\r\n    \"type\":\"CREDIT\",\r\n    \"amount\":400,\r\n    \"balance\":100,\r\n    \"accountId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movements/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movements",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movement/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movement",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"orley\",\r\n    \"email\":\"vanorley@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"roles\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/add-new-user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"add-new-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"orley\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/generate-token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"generate-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Repot",
+			"item": [
+				{
+					"name": "Repor1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/reports?start=2024-01-24&end=2024-01-25&clientId=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reports"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2024-01-24"
+								},
+								{
+									"key": "end",
+									"value": "2024-01-25"
+								},
+								{
+									"key": "clientId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entries",
+			"item": [
+				{
+					"name": "Entries By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/entries?category=Animals",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"entries"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Animals"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entries By Category Rest Template",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/entries/rest-template?category=Animals",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"entries",
+								"rest-template"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Animals"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvcmxleSIsImlhdCI6MTcwNjE1MTIxNiwiZXhwIjoxNzA2MTU0ODE2fQ.FY3OXKTyzuWsL0-Qdp0E4fL7kVX4IzpxQhGXQD-tWHk",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
